@@ -1,5 +1,19 @@
 let myLibrary = [];
 
+// Sample book
+const sampleBook = new Book("Tolkien", "Lord of The Rings","1938", 509, "Read");
+
+
+//Adds sample book to library and displays table in browser console
+addBookToLibrary(sampleBook);
+showLibrary();
+
+
+
+
+
+
+
 function Book(author,title, year, numberOfPages, read) {
   // the constructor...
   this.author = author;
@@ -15,5 +29,5 @@ function addBookToLibrary(book) {
 }
 
 function showLibrary(){
-    console.log(myLibrary);
+    console.table(myLibrary);
 }
