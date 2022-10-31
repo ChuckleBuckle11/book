@@ -8,7 +8,14 @@ body{
 .library{
     display:grid;
     grid-template-rows: auto;
-    grid-template-columns: 5;
+    grid-template-columns: 1;
+}
+.library-header{
+    display:grid;
+    grid-template-rows: auto;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    font-weight: bold;
+
 }
 .table-header{
     grid-row:1;
