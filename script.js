@@ -14,6 +14,33 @@ displayBooks();
 
 
 
+// when clicking the Submit button, add a new Book
+const submitButton = document.getElementById("submitButton");
+const form = document.querySelector("#form");
+console.log(submitButton);
+submitButton.onclick = () => {
+
+  let formElements = form.elements;
+
+  let author = formElements[0].value;
+  let title = formElements[1].value;
+  let year = formElements[2].value;
+  let numberOfPages = formElements[3].value;
+  let read = formElements[4].value;
+
+  // exits the function if any of the fields are empty
+  if (!author || !title || !year || !numberOfPages || !read){
+    alert("Please fill in all fields!")
+    return null;
+  }
+
+  let newBook = new Book(author,title,year,numberOfPages,read)
+  addBookToLibrary(newBook);
+  console.log(myLibrary);
+
+}
+
+
 
 function Book(author, title, year, numberOfPages, read) {
   // the constructor...
@@ -35,8 +62,15 @@ function showLibrary() {
 
 function displayBooks() {
   const library = document.getElementsByClassName("library")[0];
-  for (book of myLibrary){
 
+  // removes any existing items 
+  const items = document.querySelectorAll('.item');
+  items.forEach(item => {
+    item.remove();
+  });
+
+
+  for (book of myLibrary){
     //Creates new row to be appended to library
     const newRow = document.createElement("div");
     //creates listing 
@@ -68,4 +102,8 @@ function displayBooks() {
 
 
   }
+}
+
+function clearForm(){
+
 }
