@@ -9,11 +9,6 @@ addBookToLibrary(sampleBook);
 addBookToLibrary(sampleBook2);
 displayBooks();
 
-
-
-
-
-
 // when clicking the Submit button, add a new Book
 const submitButton = document.getElementById("submitButton");
 const form = document.querySelector("#form");
@@ -54,8 +49,6 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
   // do stuff here
 }
-
-
 
 
 
@@ -100,8 +93,6 @@ function displayBooks() {
     deleteButton.onclick = () => {
       deleteRow();
     };
-
-
 
     //creates ChangeReadStatus button
     const readStatusButton = document.createElement("button");

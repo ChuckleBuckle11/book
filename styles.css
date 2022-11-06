@@ -1,7 +1,13 @@
 body{
     background-color: bisque;
+    height:100%;
 }
 
+.container{
+    display:flex;
+    size: page;
+    
+}
 .library div{
     border: 1px solid black;
 }
@@ -9,14 +15,44 @@ body{
     display:grid;
     grid-template-rows: auto;
     grid-template-columns: 1;
-}
-.library-header{
-    display:grid;
-    grid-template-rows: auto;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    font-weight: bold;
+    flex:1;
 
 }
+.library-header, .item-row{
+    display:grid;
+    grid-template-rows: auto;
+    grid-template-columns: 50px repeat(5, 1fr) 100px 100px;
+
+}
+
+.library-header{
+    font-weight: bold;
+}
+
 .table-header{
     grid-row:1;
 }
+
+
+/* Form styles */
+.form-popup {
+    /* display: none; */
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.form-container {
+    flex:1;
+    padding: 10px;
+    width: 50%;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+}
+
+button#submitBook{
+    width:200px;
+}
+
